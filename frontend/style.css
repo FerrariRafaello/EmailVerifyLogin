@@ -1,0 +1,198 @@
+/* Global background with fallback color */
+body.bg-image {
+    background: #191c24 url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card container for all pages */
+.card-container {
+    background: rgba(30, 32, 45, 0.822);
+    border-radius: 28px;
+    box-shadow: 
+        0 12px 36px 8px rgba(0,0,0,0.32),
+        0 2.5px 12px rgba(0,0,0,0.19);
+    width: 470px;
+    max-width: 96vw;
+    margin: 50px auto;
+    padding: 46px 38px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(1.5px);
+}
+
+/* Titles */
+.card-title {
+    color: #51a6ff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.3rem;
+    margin-bottom: 28px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 14px #0008;
+}
+
+/* Inputs */
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.input-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.input-wrapper input {
+    width: 100%;
+    padding: 13px 44px 13px 15px;
+    border: none;
+    border-radius: 12px;
+    background: #191c24;
+    color: #d5e6f7;
+    font-size: 1.06rem;
+    font-family: inherit;
+    outline: none;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 1.5px 6px #0003;
+    box-sizing: border-box;
+    line-height: 1.2;
+}
+.input-wrapper input:focus {
+    box-shadow: 0 0 0 2px #3fa2f7;
+}
+
+/* Eye toggle */
+.eye-btn {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 28px;
+}
+.eye-btn svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+/* Error messages */
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.7em;
+    position: absolute;
+    left: 0;
+    bottom: -22px;
+    margin-left: 6px;
+    min-height: 18px;
+    text-align: left;
+}
+
+/* Default meter colors */
+.strength-meter {
+    font-size: 0.7em;
+    margin: 2px 0 0 4px;
+    font-weight: bold;
+    height: 18px;
+    text-align: left;
+    transition: color 0.25s;
+    color: #0ec97a;  
+}
+.match-message {
+    font-size: 0.7em;
+    margin: 2px 0 0 4px;
+    font-weight: bold;
+    height: 18px;
+    text-align: left;
+    transition: color 0.25s;
+    color: #FF0000;     
+}
+
+/* Modifier classes */
+.strength-weak   { color: #0ec97a; }
+.strength-medium { color: #d3d319; }
+.strength-strong { color: #ff6b6b; }
+
+.match-ok    { color: #0ec97a; }
+.match-error { color: #ff6b6b; }
+
+/* Primary button */
+.btn-main {
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 14px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #0ecffe 0, #2180e4 100%);
+    color: #fff;
+    font-size: 1.14rem;
+    font-weight: 600;
+    font-family: inherit;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    box-shadow: 0 1.5px 8px #0004;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-main:hover {
+    background: linear-gradient(90deg, #2180e4 0, #0ecffe 100%);
+    box-shadow: 0 4px 16px #0ecffe44;
+}
+
+/* Extra link */
+.extra-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #dbe7f5;
+    font-size: 1.02rem;
+}
+.extra-link a {
+    color: #43a7ff;
+    text-decoration: underline;
+    transition: color 0.18s;
+}
+.extra-link a:hover {
+    color: #2b8ae6;
+}
+
+/* Success page button */
+#backToLoginBtn {
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .card-container { width: 98vw; padding: 20px 2vw 15px; }
+    .card-title   { font-size: 1.36rem; }
+    .strength-meter,
+    .match-message { font-size: 0.95em; }
+}
+@media (max-width: 420px) {
+    .card-container { padding: 10px 2vw 6px; }
+    .input-wrapper input { font-size: 0.98rem; }
+}
+
+/* Email confirmation message */
+#confirmEmailMsg {
+  font-size: 1rem;
+  margin-top: 1em;
+  text-align: center;
+  color: #0ec97a;
+}
+.info-text {
+  color: #dbe7f5;
+}

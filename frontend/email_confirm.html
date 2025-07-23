@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirme seu e‑mail</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-image">
+  <div class="card-container">
+    <h2 class="card-title">Confirmação de e‑mail</h2>
+    <p class="info-text">Clique no botão abaixo para confirmar seu e‑mail.</p>
+    <button id="confirmEmailBtn" class="btn-main">Confirmar E‑mail</button>
+    <div id="confirmEmailMsg" style="margin-top: 20px;"></div>
+  </div>
+
+  <script>
+    document.getElementById('confirmEmailBtn').onclick = async function () {
+      const params = new URLSearchParams(window.location.search);
+      const token  = params.get('token');
+      const msgEl  = document.getElementById('confirmEmailMsg');
+
+      if (!token) {
+        msgEl.textContent = 'Token não fornecido.';
+        msgEl.style.color   = '#ff6b6b';
+        return;
+      }
+
+      // chama o endpoint real de confirmação em segundo plano
+      const res  = await fetch(`/api/confirm_email?token=${encodeURIComponent(token)}`, { method: 'GET' });
+      const data = await res.json();
+
+      if (data.success) {
+        msgEl.textContent = 'E‑mail confirmado! Você pode entrar no sistema.';
+        msgEl.style.color = '#0ec97a';
+      } else {
+        msgEl.textContent = 'Falha na confirmação do e‑mail.';
+        msgEl.style.color = '#ff6b6b';
+      }
+    };
+  </script>
+</body>
+</html>

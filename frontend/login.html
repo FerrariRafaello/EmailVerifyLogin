@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>SLogin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-image">
+    <div class="card-container">
+        <h1 class="card-title">SLogin</h1>
+        <form id="login-form" autocomplete="off">
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <input type="email" id="email" placeholder="E-mail" required>
+                </div>
+                <div class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="Senha" maxlength="20" required>
+                    <button type="button" id="togglePassword" class="eye-btn" tabindex="-1">
+                        <svg id="eyeIcon" viewbox="0 0 24 24" width="24" height="24">
+                            <ellipse cx="12" cy="12" rx="8.5" ry="5.5" fill="none" stroke="#bbb" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="2.2" fill="#bbb"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="error-message"></div>
+            </div>
+            <button type="submit" class="btn-main">Entrar</button>
+        </form>
+        <p class="extra-link">Não tem conta? <a href="register.html">Cadastrar-se</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
